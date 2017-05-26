@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class TileGridController : MonoBehaviour {
 
-    RectTransform _rt;
+    //RectTransform _rt;
     //GridLayoutGroup _grid;
     public List<TileColumn> columns;
 
     private void Awake()
     {
-        _rt = gameObject.GetComponent<RectTransform>();
+        //_rt = gameObject.GetComponent<RectTransform>();
         //_grid = gameObject.GetComponent<GridLayoutGroup>();
         columns = new List<TileColumn>();
     }
