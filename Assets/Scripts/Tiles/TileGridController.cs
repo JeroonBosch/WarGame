@@ -88,15 +88,16 @@ public class TileGridController : MonoBehaviour {
 
     public void DestroyTile(GameObject tile)
     {
+        List<BaseTile> removeFromList = null;
         foreach (TileColumn column in columns)
         {
             BaseTile baseTile = tile.GetComponent<BaseTile>();
             if (column.tiles.Contains(baseTile))
             {
-                column.tiles.Remove(baseTile);
+                removeFromList = column.tiles;
             }
         }
-        Destroy(tile);
+        tile.GetComponent<BaseTile>().PromptDestroy(removeFromList);
     }
 
     private void Refill (TileColumn column, string direction)

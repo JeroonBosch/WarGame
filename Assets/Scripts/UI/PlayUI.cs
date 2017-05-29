@@ -117,10 +117,12 @@ public class PlayUI : MonoBehaviour
         if (player)
         {
             Image color1 = playerSelect.Find("Color1").GetComponent<Image>();
-            color1.color = player.type1.Color;
+            //color1.color = player.type1.Color;
+            color1.sprite = player.type1.Sprite;
 
             Image color2 = playerSelect.Find("Color2").GetComponent<Image>();
-            color2.color = player.type2.Color;
+            color2.sprite = player.type2.Sprite;
+            //color2.color = player.type2.Color;
         }
     }
 
@@ -148,7 +150,14 @@ public class PlayUI : MonoBehaviour
                 _dragTiles.Clear();
                 _dragFinger = finger;
             }
-                
+            if (_selectedUI.transform.parent == _curPlayer.transform) {
+                if (_selectedUI.name == "Color1" && _curPlayer.CheckPowerLevel_1() || _selectedUI.name == "Color2" && _curPlayer.CheckPowerLevel_2())
+                {
+                    GameObject selectEffect = Instantiate(Resources.Load<GameObject>("SpecialSelect"));
+                    selectEffect.transform.SetParent(_selectedUI.transform, false);
+                    selectEffect.name = "SpecialSelect";
+                }
+            }
         }
     }
 
@@ -164,7 +173,20 @@ public class PlayUI : MonoBehaviour
             _dragTiles.Clear();
             _line.positionCount = 0;
         }
-        
+
+        if (_selectedUI != null)
+        {
+            if (_selectedUI.name == "Color1" && _curPlayer.CheckPowerLevel_1() || _selectedUI.name == "Color2" && _curPlayer.CheckPowerLevel_2())
+            {
+                foreach (Transform transform in _selectedUI.transform)
+                {
+                    if (transform.name == "SpecialSelect")
+                        Destroy(transform.gameObject);
+                }
+            }
+
+            _selectedUI = null;
+        }
     }
 
     void OnFingerSwipe(Lean.Touch.LeanFinger finger)

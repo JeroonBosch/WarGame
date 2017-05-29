@@ -52,4 +52,20 @@ public class TileTypes
                 m_type = ESubState.red;
         }
     }
+
+    public Sprite Sprite
+    {
+        get
+        {
+            if (m_type == ESubState.yellow)
+                return Resources.LoadAll<Sprite>("Images/TilesNormal128x128")[0];
+            else if (m_type == ESubState.blue)
+                return Resources.LoadAll<Sprite>("Images/TilesNormal128x128")[1];
+            else if (m_type == ESubState.green)
+                return Resources.LoadAll<Sprite>("Images/TilesNormal128x128")[2];
+            else if (m_type == ESubState.red)
+                return Resources.LoadAll<Sprite>("Images/TilesNormal128x128")[3];
+            return Resources.LoadAll<Sprite>("Images/TilesNormal128x128")[0];
+        }
+    }
 }
