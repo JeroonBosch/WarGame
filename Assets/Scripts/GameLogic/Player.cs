@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Player : ScriptableObject
 {
     public int playerNumber;
+    public string playerString;
 
     private float _health;
     public float health { get { return _health; } set { _health = value;} }
@@ -23,8 +24,9 @@ public class Player : ScriptableObject
     private int _turn;
     public int turn { get { return _turn; } set { _turn = value; } }
 
-    public void Init(int number)
+    public void Init(string name, int number)
     {
+        playerString = name;
         playerNumber = number;
 
         portrait = null;
@@ -53,6 +55,7 @@ public class Player : ScriptableObject
     public void Heal (int heal)
     {
         health += heal;
+        health = Mathf.Min(Constants.PlayerStartHP, health);
 
         portrait.SetHitpoints(health, Constants.PlayerStartHP);
     }
@@ -101,6 +104,17 @@ public class Player : ScriptableObject
             type2Power += (comboSize * Constants.SpecialMoveMultiplier);
             type2Power = Mathf.Min(Constants.SpecialMoveFillRequirement, type2Power);
         }
+
+        transform.Find("Color1").Find("Power").GetComponent<Text>().text = type1Power + "/" + Constants.SpecialMoveFillRequirement;
+        transform.Find("Color2").Find("Power").GetComponent<Text>().text = type2Power + "/" + Constants.SpecialMoveFillRequirement;
+    }
+
+    public void EmptyPower (TileTypes.ESubState type)
+    {
+        if (type1.Type == type)
+            type1Power = 0;
+        if (type2.Type == type)
+            type2Power = 0;
 
         transform.Find("Color1").Find("Power").GetComponent<Text>().text = type1Power + "/" + Constants.SpecialMoveFillRequirement;
         transform.Find("Color2").Find("Power").GetComponent<Text>().text = type2Power + "/" + Constants.SpecialMoveFillRequirement;

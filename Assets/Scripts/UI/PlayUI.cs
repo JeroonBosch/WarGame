@@ -117,12 +117,14 @@ public class PlayUI : MonoBehaviour
         if (player)
         {
             Image color1 = playerSelect.Find("Color1").GetComponent<Image>();
-            //color1.color = player.type1.Color;
             color1.sprite = player.type1.Sprite;
+            SpecialPowerUI special1 = playerSelect.Find("Color1").GetComponent<SpecialPowerUI>();
+            special1.SetColorType(player.type1.Type);
 
             Image color2 = playerSelect.Find("Color2").GetComponent<Image>();
             color2.sprite = player.type2.Sprite;
-            //color2.color = player.type2.Color;
+            SpecialPowerUI special2 = playerSelect.Find("Color2").GetComponent<SpecialPowerUI>();
+            special2.SetColorType(player.type2.Type);
         }
     }
 
@@ -153,9 +155,7 @@ public class PlayUI : MonoBehaviour
             if (_selectedUI.transform.parent == _curPlayer.transform) {
                 if (_selectedUI.name == "Color1" && _curPlayer.CheckPowerLevel_1() || _selectedUI.name == "Color2" && _curPlayer.CheckPowerLevel_2())
                 {
-                    GameObject selectEffect = Instantiate(Resources.Load<GameObject>("SpecialSelect"));
-                    selectEffect.transform.SetParent(_selectedUI.transform, false);
-                    selectEffect.name = "SpecialSelect";
+                    _selectedUI.GetComponent<SpecialPowerUI>().SetActive(finger, _curPlayer);
                 }
             }
         }
@@ -178,11 +178,8 @@ public class PlayUI : MonoBehaviour
         {
             if (_selectedUI.name == "Color1" && _curPlayer.CheckPowerLevel_1() || _selectedUI.name == "Color2" && _curPlayer.CheckPowerLevel_2())
             {
-                foreach (Transform transform in _selectedUI.transform)
-                {
-                    if (transform.name == "SpecialSelect")
-                        Destroy(transform.gameObject);
-                }
+                _selectedUI.GetComponent<SpecialPowerUI>().Fly(_curPlayer);
+                EndTurn();
             }
 
             _selectedUI = null;

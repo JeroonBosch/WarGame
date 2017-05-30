@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>WebGL:20</UnityBuildTarget>
     <UnityVersion>5.6.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -134,8 +136,10 @@
     <Compile Include="Assets\Scripts\UI\EndScreenPortraitUI.cs" />
     <Compile Include="Assets\Scripts\UI\EndUI.cs" />
     <Compile Include="Assets\Scripts\UI\MenuUI.cs" />
+    <Compile Include="Assets\Scripts\UI\MissileUI.cs" />
     <Compile Include="Assets\Scripts\UI\PlayUI.cs" />
     <Compile Include="Assets\Scripts\UI\PortraitUI.cs" />
+    <Compile Include="Assets\Scripts\UI\SpecialPowerUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTouch\Examples\Fonts\OFL.txt" />
