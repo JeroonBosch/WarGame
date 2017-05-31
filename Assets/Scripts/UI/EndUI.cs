@@ -8,6 +8,7 @@ public class EndUI : MonoBehaviour
 {
     public void Handle_Replay()
     {
-        RootController.Instance.StateController().State = StateBase.ESubState.Menu;
+        //RootController.Instance.StateController().State = StateBase.ESubState.Menu;
+        RootController.Instance.Restart();
     }
 }

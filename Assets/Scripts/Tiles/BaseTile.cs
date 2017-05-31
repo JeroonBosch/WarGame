@@ -19,7 +19,10 @@ public class BaseTile : MonoBehaviour {
     private float _destroyCounter = 0;
     private bool _destroyCounting = false;
     private float _destroyTime = 1.2f;
+    private float _explosionTime = 0f;
     private List<BaseTile> removeFromList;
+    private Player _destroyedBy;
+    private bool _hasExploded = false;
 
     // Use this for initialization
     void Awake () {
@@ -53,6 +56,13 @@ public class BaseTile : MonoBehaviour {
         if (_destroyCounting)
         {
             _destroyCounter += Time.deltaTime;
+
+            if (_destroyCounter > _explosionTime && !_hasExploded)
+            {
+                if (_destroyedBy != null)
+                    Explosion(RootController.Instance.NextPlayer(_destroyedBy.playerNumber));
+            }
+
             if (_destroyCounter > _destroyTime)
             {
                 DestroyMe();
@@ -61,13 +71,15 @@ public class BaseTile : MonoBehaviour {
 
     }
 
-    public void PromptDestroy (List<BaseTile> removeFromList)
+    public void PromptDestroy (List<BaseTile> removeFromList, Player destroyedBy, int count)
     {
         if (removeFromList != null)
         {
             this.removeFromList = removeFromList;
-            SetDestroyAnimation();
+            _destroyedBy = destroyedBy;
             _destroyCounting = true;
+            _explosionTime = Mathf.Min(count * 0.2f, 1.2f);
+            _destroyTime = 1.2f + Mathf.Min(count * 0.2f, 1.2f);
         }
         else
             Debug.Log("ERROR. Could not destroy tile.");
@@ -79,9 +91,18 @@ public class BaseTile : MonoBehaviour {
         removeFromList.Remove(this);
     }
 
-    public void SetDestroyAnimation ()
+    private void Explosion(Player playerToAttack)
     {
-        Animator anim = this.gameObject.AddComponent<Animator>();
-        anim.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/TileSplosionController");
+        if (transform)
+        {
+            _hasExploded = true;
+
+            this.gameObject.GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+
+            GameObject explosion = Instantiate(Resources.Load<GameObject>("TileExplosion"));
+            explosion.transform.SetParent(transform.parent.parent.parent);
+            explosion.transform.position = transform.position;
+            explosion.GetComponent<TileExplosionUI>().Init(playerToAttack);
+        }
     }
 }

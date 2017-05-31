@@ -24,6 +24,9 @@ public class Player : ScriptableObject
     private int _turn;
     public int turn { get { return _turn; } set { _turn = value; } }
 
+    private bool isExploding = false;
+    public bool exploding { set { isExploding = value; } }
+
     public void Init(string name, int number)
     {
         playerString = name;
@@ -84,6 +87,25 @@ public class Player : ScriptableObject
     public void SetTimerActive (bool active)
     {
         this.portrait.SetTimerActive(active);
+
+        if (active)
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            portrait.gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+
+            if (CheckPowerLevel_1())
+                transform.Find("Color1").GetComponent<SpecialPowerUI>().SetReady();
+            if (CheckPowerLevel_2())
+                transform.Find("Color2").GetComponent<SpecialPowerUI>().SetReady();
+        }
+        else
+        {
+            transform.localScale = new Vector3(.7f, .7f, .7f);
+            portrait.gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .8f);
+
+            transform.Find("Color1").GetComponent<SpecialPowerUI>().SetNotReady();
+            transform.Find("Color2").GetComponent<SpecialPowerUI>().SetNotReady();
+        }  
     }
 
     public void SetTimer (float time)
@@ -107,6 +129,11 @@ public class Player : ScriptableObject
 
         transform.Find("Color1").Find("Power").GetComponent<Text>().text = type1Power + "/" + Constants.SpecialMoveFillRequirement;
         transform.Find("Color2").Find("Power").GetComponent<Text>().text = type2Power + "/" + Constants.SpecialMoveFillRequirement;
+
+        if (CheckPowerLevel_1())
+            transform.Find("Color1").GetComponent<SpecialPowerUI>().SetReady();
+        if (CheckPowerLevel_2())
+            transform.Find("Color2").GetComponent<SpecialPowerUI>().SetReady();
     }
 
     public void EmptyPower (TileTypes.ESubState type)
@@ -118,6 +145,9 @@ public class Player : ScriptableObject
 
         transform.Find("Color1").Find("Power").GetComponent<Text>().text = type1Power + "/" + Constants.SpecialMoveFillRequirement;
         transform.Find("Color2").Find("Power").GetComponent<Text>().text = type2Power + "/" + Constants.SpecialMoveFillRequirement;
+
+        transform.Find("Color1").GetComponent<SpecialPowerUI>().SetNotReady();
+        transform.Find("Color2").GetComponent<SpecialPowerUI>().SetNotReady();
     }
 
     public bool CheckPowerLevel_1 ()
@@ -144,5 +174,31 @@ public class Player : ScriptableObject
     public Sprite GetPortraitSprite ()
     {
         return _portraitSprite;
+    }
+
+    public void SpecialExplosion()
+    {
+        if (transform)
+        {
+            GameObject explosion = Instantiate(Resources.Load<GameObject>("SpecialExplosion"));
+            explosion.transform.SetParent(transform.parent);
+            explosion.transform.position = transform.position;
+
+            Destroy(explosion, .94f);
+        }
+    }
+
+    public void NormalExplosion()
+    {
+        if (transform && !isExploding)
+        {
+            isExploding = true;
+
+            GameObject explosion = Instantiate(Resources.Load<GameObject>("NormalExplosion"));
+            explosion.transform.SetParent(transform.parent);
+            explosion.transform.position = transform.position;
+
+            Destroy(explosion, .94f);
+        }
     }
 }

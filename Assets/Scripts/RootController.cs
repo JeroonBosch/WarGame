@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class RootController : MonoBehaviour {
     private static RootController _instance; //Singleton
     private AudioSource _audio;
-    private bool _controlsEnabled;
+    private bool _controlsEnabled = true;
     private StateBase _stateController;
     private List<Player> players;
     private Player _winnerPlayer;
@@ -19,6 +19,11 @@ public class RootController : MonoBehaviour {
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 
     void Awake()

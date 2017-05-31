@@ -16,6 +16,11 @@ public class SpecialPowerUI : MonoBehaviour {
 
     private TileTypes _type;
 
+    private bool _readyForUse = false;
+    private float _wiggleDirection = 1f;
+    private float _wiggleSpeed = .008f;
+    private float _wiggleThreshhold = .1f;
+
     private void Awake()
     {
         _type = new TileTypes();
@@ -23,7 +28,15 @@ public class SpecialPowerUI : MonoBehaviour {
 
     void Update()
     {
+        if (_readyForUse)
+        {
+            RectTransform rt = GetComponent<RectTransform>();
+            if (Mathf.Abs(rt.localRotation.z) >= _wiggleThreshhold)
+                _wiggleDirection = -1f * _wiggleDirection;
 
+            float z = rt.localRotation.z + _wiggleSpeed * _wiggleDirection;
+            rt.localRotation = new Quaternion(rt.localRotation.x, rt.localRotation.y, z, rt.localRotation.w);
+        }
     }
 
     void LateUpdate () {
@@ -34,6 +47,19 @@ public class SpecialPowerUI : MonoBehaviour {
             _lastPos = _curPos;
             _curPos = _finger.GetWorldPosition(1f, Camera.current);
         }
+    }
+
+    public void SetReady ()
+    {
+        _readyForUse = true;
+        transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+    }
+
+    public void SetNotReady ()
+    {
+        _readyForUse = false;
+        transform.localScale = new Vector3(1f, 1f, 1f);
+        transform.localRotation = new Quaternion(0f, 0f, 0f, transform.localRotation.w);
     }
 
     public void SetColorType (TileTypes.ESubState state)
@@ -48,6 +74,8 @@ public class SpecialPowerUI : MonoBehaviour {
         rb.velocity = _velocity * _speed;
 
         curPlayer.EmptyPower(_type.Type);
+
+        RootController.Instance.DisableControls();
     }
 
     public void SetActive (Lean.Touch.LeanFinger finger, Player curPlayer)

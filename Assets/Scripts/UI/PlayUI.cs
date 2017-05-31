@@ -12,6 +12,7 @@ public class PlayUI : MonoBehaviour
     private Transform _canvas;
     private Transform _gameboard;
     private GameObject _selectedUI;
+    private GameObject _selectedUI2;
     private TileGridController _gridController;
 
     private Lean.Touch.LeanFinger _dragFinger;
@@ -19,6 +20,8 @@ public class PlayUI : MonoBehaviour
     private LineRenderer _line;
 
     private float _timer;
+    private float _lingerTimer;
+    private GameObject _lingerTile;
     private Player _curPlayer;
 
     private void Start()
@@ -43,7 +46,8 @@ public class PlayUI : MonoBehaviour
 
     private void Update()
     {
-        if (_dragTiles.Count < 1)
+        //if (_dragTiles.Count < 1) //no pause
+        if (RootController.Instance.ControlsEnabled())
             _timer += Time.deltaTime;
 
         _curPlayer.SetTimer(_timer);
@@ -66,6 +70,26 @@ public class PlayUI : MonoBehaviour
                     if (newTile.GetComponent<BaseTile>().IsAdjacentTo(_dragTiles[_dragTiles.Count - 1]))
                         _dragTiles.Add(newTile);
                 }
+            } else if (newTile != null && _dragTiles.Contains(newTile))
+            {
+                if (_lingerTile == null)
+                {
+                    _lingerTile = newTile;
+                    _lingerTimer = 0;
+
+                } else
+                    _lingerTimer += Time.fixedDeltaTime;
+
+                if (_lingerTimer > .24f)
+                {
+                    int index = _dragTiles.IndexOf(newTile);
+                    for (int i = index + 1; i < _dragTiles.Count; i++)
+                    {
+                        _dragTiles.RemoveAt(i);
+                    }
+                    _lingerTile = null;
+                }
+
             }
 
             _line.positionCount = _dragTiles.Count;
@@ -100,14 +124,12 @@ public class PlayUI : MonoBehaviour
     private void OnEnable()
     {
         Lean.Touch.LeanTouch.OnFingerDown += OnFingerDown;
-        Lean.Touch.LeanTouch.OnFingerSwipe += OnFingerSwipe;
         Lean.Touch.LeanTouch.OnFingerUp += OnFingerUp;
     }
 
     private void OnDisable()
     {
         Lean.Touch.LeanTouch.OnFingerDown -= OnFingerDown;
-        Lean.Touch.LeanTouch.OnFingerSwipe -= OnFingerSwipe;
         Lean.Touch.LeanTouch.OnFingerUp -= OnFingerUp;
     }
 
@@ -128,34 +150,71 @@ public class PlayUI : MonoBehaviour
         }
     }
 
+    void OnPinch()
+    {
+
+    }
+
     void OnFingerDown(Lean.Touch.LeanFinger finger)
     {
-        _selectedUI = null;
-
-        GraphicRaycaster gRaycast = _canvas.GetComponent<GraphicRaycaster>();
-        PointerEventData ped = new PointerEventData(null);
-        ped.position = finger.GetSnapshotScreenPosition(1f);
-        List<RaycastResult> results = new List<RaycastResult>();
-        gRaycast.Raycast(ped, results);
-
-        if (results != null)
+        if (RootController.Instance.ControlsEnabled() && finger.Index == 0)
         {
-            _selectedUI = results[0].gameObject;
-            foreach (RaycastResult result in results)
-            {
-                if (result.gameObject.name == "Color1" || result.gameObject.name == "Color2")
-                    _selectedUI = result.gameObject;
-            }
+            _selectedUI = null;
 
-            if (_selectedUI.tag == "Tile")
+            GraphicRaycaster gRaycast = _canvas.GetComponent<GraphicRaycaster>();
+            PointerEventData ped = new PointerEventData(null);
+            ped.position = finger.GetSnapshotScreenPosition(1f);
+            List<RaycastResult> results = new List<RaycastResult>();
+            gRaycast.Raycast(ped, results);
+
+            if (results != null)
             {
-                _dragTiles.Clear();
-                _dragFinger = finger;
-            }
-            if (_selectedUI.transform.parent == _curPlayer.transform) {
-                if (_selectedUI.name == "Color1" && _curPlayer.CheckPowerLevel_1() || _selectedUI.name == "Color2" && _curPlayer.CheckPowerLevel_2())
+                _selectedUI = results[0].gameObject;
+                foreach (RaycastResult result in results)
                 {
-                    _selectedUI.GetComponent<SpecialPowerUI>().SetActive(finger, _curPlayer);
+                    if (result.gameObject.name == "Color1" || result.gameObject.name == "Color2")
+                        _selectedUI = result.gameObject;
+                }
+
+                if (_selectedUI.tag == "Tile")
+                {
+                    _dragTiles.Clear();
+                    _dragFinger = finger;
+                }
+                if (_selectedUI.transform.parent == _curPlayer.transform)
+                {
+                    if (_selectedUI.name == "Color1" && _curPlayer.CheckPowerLevel_1() || _selectedUI.name == "Color2" && _curPlayer.CheckPowerLevel_2())
+                    {
+                        _selectedUI.GetComponent<SpecialPowerUI>().SetActive(finger, _curPlayer);
+                    }
+                }
+            }
+        }
+        if (RootController.Instance.ControlsEnabled() && finger.Index == 1)
+        {
+            _selectedUI2 = null;
+
+            GraphicRaycaster gRaycast = _canvas.GetComponent<GraphicRaycaster>();
+            PointerEventData ped = new PointerEventData(null);
+            ped.position = finger.GetSnapshotScreenPosition(1f);
+            List<RaycastResult> results = new List<RaycastResult>();
+            gRaycast.Raycast(ped, results);
+
+            if (results != null)
+            {
+                _selectedUI2 = results[0].gameObject;
+                foreach (RaycastResult result in results)
+                {
+                    if ((result.gameObject.name == "Color1" || result.gameObject.name == "Color2") && result.gameObject != _selectedUI)
+                        _selectedUI2 = result.gameObject;
+                }
+
+                if (_selectedUI2.transform.parent == _curPlayer.transform)
+                {
+                    if (_selectedUI2.name == "Color1" && _curPlayer.CheckPowerLevel_1() || _selectedUI2.name == "Color2" && _curPlayer.CheckPowerLevel_2())
+                    {
+                        _selectedUI2.GetComponent<SpecialPowerUI>().SetActive(finger, _curPlayer);
+                    }
                 }
             }
         }
@@ -163,63 +222,52 @@ public class PlayUI : MonoBehaviour
 
     void OnFingerUp(Lean.Touch.LeanFinger finger)
     {
-        _dragFinger = null;
-
-        if (_dragTiles != null)
+        if (finger.Index == 0)
         {
-            if (_dragTiles.Count >= 3)
-                Combo();
+            _dragFinger = null;
 
-            _dragTiles.Clear();
-            _line.positionCount = 0;
-        }
-
-        if (_selectedUI != null)
-        {
-            if (_selectedUI.name == "Color1" && _curPlayer.CheckPowerLevel_1() || _selectedUI.name == "Color2" && _curPlayer.CheckPowerLevel_2())
+            if (_dragTiles != null)
             {
-                _selectedUI.GetComponent<SpecialPowerUI>().Fly(_curPlayer);
-                EndTurn();
+                if (_dragTiles.Count >= 3)
+                    Combo();
+
+                _dragTiles.Clear();
+                _line.positionCount = 0;
             }
 
-            _selectedUI = null;
-        }
-    }
-
-    void OnFingerSwipe(Lean.Touch.LeanFinger finger)
-    {
-
-        if (_selectedUI != null)
-        {
-            Debug.Log(_selectedUI.name);
-            if (_selectedUI.name == "Color1" || _selectedUI.name == "Color2")
+            if (_selectedUI != null)
             {
-                if (_selectedUI.transform.parent == _curPlayer.transform)
+                if (_selectedUI.name == "Color1" && _curPlayer.CheckPowerLevel_1() || _selectedUI.name == "Color2" && _curPlayer.CheckPowerLevel_2())
                 {
-                    if (_selectedUI.name == "Color1" && _curPlayer.CheckPowerLevel_1() || _selectedUI.name == "Color2" && _curPlayer.CheckPowerLevel_2())
-                    {
-                        Rigidbody2D rb = _selectedUI.GetComponent<Rigidbody2D>();
-                        if (rb)
-                            rb.AddForce(finger.SwipeScaledDelta * 20f);
-                        _selectedUI = null;
-
-                        RootController.Instance.NextPlayer(_curPlayer.playerNumber).ReceiveDamage(Mathf.FloorToInt(Constants.SpecialMoveFillRequirement));
-                        EndTurn();
-                    }
+                    _selectedUI.GetComponent<SpecialPowerUI>().Fly(_curPlayer);
+                    EndTurn();
                 }
 
+                _selectedUI = null;
+            }
+        }
+        if (finger.Index == 1)
+        {
+            if (_selectedUI2 != null)
+            {
+                _selectedUI2.GetComponent<SpecialPowerUI>().Fly(_curPlayer);
+
+                _selectedUI2 = null;
             }
         }
     }
 
     void Combo ()
     {
+        int count = 0;
         foreach (GameObject go in _dragTiles)
         {
-            _gridController.DestroyTile(go);
+            count++;
+            _gridController.DestroyTile(go, _curPlayer, count);
         }
-        RootController.Instance.NextPlayer(_curPlayer.playerNumber).ReceiveDamage(_dragTiles.Count);
+        //RootController.Instance.NextPlayer(_curPlayer.playerNumber).ReceiveDamage(_dragTiles.Count);
         _curPlayer.FillPower(_dragTiles[0].GetComponent<BaseTile>().type.Type, _dragTiles.Count);
+        RootController.Instance.NextPlayer(_curPlayer.playerNumber).exploding = false;
 
         EndTurn();
     }
@@ -227,6 +275,15 @@ public class PlayUI : MonoBehaviour
     void PassTurn ()
     {
         _curPlayer.Heal(5);
+
+        _dragFinger = null;
+        if (_dragTiles != null)
+        {
+            _dragTiles.Clear();
+            _line.positionCount = 0;
+        }
+
+
         EndTurn();
     }
 

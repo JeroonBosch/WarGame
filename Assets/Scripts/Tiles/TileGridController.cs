@@ -54,7 +54,6 @@ public class TileGridController : MonoBehaviour {
                 if (column.tiles.Count < Constants.gridSizeVertical)
                     Refill(column, "top");
             }
-            
         }
     }
 
@@ -86,7 +85,7 @@ public class TileGridController : MonoBehaviour {
         return list;
     }
 
-    public void DestroyTile(GameObject tile)
+    public void DestroyTile(GameObject tile, Player destroyedBy, int count)
     {
         List<BaseTile> removeFromList = null;
         foreach (TileColumn column in columns)
@@ -97,7 +96,7 @@ public class TileGridController : MonoBehaviour {
                 removeFromList = column.tiles;
             }
         }
-        tile.GetComponent<BaseTile>().PromptDestroy(removeFromList);
+        tile.GetComponent<BaseTile>().PromptDestroy(removeFromList, destroyedBy, count);
     }
 
     private void Refill (TileColumn column, string direction)

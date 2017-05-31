@@ -11,6 +11,7 @@ public class MissileUI : MonoBehaviour
         if (collision.gameObject.name == _target.playerString)
         {
             _target.ReceiveDamage(Mathf.RoundToInt(Constants.SpecialMoveFillRequirement));
+            _target.SpecialExplosion();
             Destroy(gameObject);
         }
     }
@@ -18,5 +19,10 @@ public class MissileUI : MonoBehaviour
     private void Awake()
     {
         Destroy(gameObject, 3f);
+    }
+
+    private void OnDestroy()
+    {
+        RootController.Instance.EnableControls();
     }
 }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 35d8c13b9f68d7f44be46ff256d8d036
-timeCreated: 1495789162
+timeCreated: 1496228818
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -153,12 +153,12 @@ TextureImporter:
       name: AvatarKim128x128_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 1800
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 0
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -166,12 +166,12 @@ TextureImporter:
       name: AvatarKim128x128_1
       rect:
         serializedVersion: 2
-        x: 264
-        y: 1800
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 256
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -179,12 +179,12 @@ TextureImporter:
       name: AvatarKim128x128_2
       rect:
         serializedVersion: 2
-        x: 520
-        y: 1800
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 512
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -192,12 +192,12 @@ TextureImporter:
       name: AvatarKim128x128_3
       rect:
         serializedVersion: 2
-        x: 776
-        y: 1800
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 768
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -205,12 +205,12 @@ TextureImporter:
       name: AvatarKim128x128_4
       rect:
         serializedVersion: 2
-        x: 1032
-        y: 1800
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1024
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -218,12 +218,12 @@ TextureImporter:
       name: AvatarKim128x128_5
       rect:
         serializedVersion: 2
-        x: 1288
-        y: 1800
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1280
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -231,12 +231,12 @@ TextureImporter:
       name: AvatarKim128x128_6
       rect:
         serializedVersion: 2
-        x: 1544
-        y: 1800
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1536
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -244,12 +244,12 @@ TextureImporter:
       name: AvatarKim128x128_7
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1800
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1792
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -257,12 +257,12 @@ TextureImporter:
       name: AvatarKim128x128_8
       rect:
         serializedVersion: 2
-        x: 8
-        y: 1544
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 0
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -270,12 +270,12 @@ TextureImporter:
       name: AvatarKim128x128_9
       rect:
         serializedVersion: 2
-        x: 264
-        y: 1544
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 256
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -283,12 +283,12 @@ TextureImporter:
       name: AvatarKim128x128_10
       rect:
         serializedVersion: 2
-        x: 520
-        y: 1544
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 512
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -296,12 +296,12 @@ TextureImporter:
       name: AvatarKim128x128_11
       rect:
         serializedVersion: 2
-        x: 776
-        y: 1544
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 768
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -309,12 +309,12 @@ TextureImporter:
       name: AvatarKim128x128_12
       rect:
         serializedVersion: 2
-        x: 1032
-        y: 1544
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1024
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -322,12 +322,12 @@ TextureImporter:
       name: AvatarKim128x128_13
       rect:
         serializedVersion: 2
-        x: 1288
-        y: 1544
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1280
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -335,12 +335,12 @@ TextureImporter:
       name: AvatarKim128x128_14
       rect:
         serializedVersion: 2
-        x: 1544
-        y: 1544
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1536
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -348,12 +348,12 @@ TextureImporter:
       name: AvatarKim128x128_15
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1544
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1792
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -361,12 +361,12 @@ TextureImporter:
       name: AvatarKim128x128_16
       rect:
         serializedVersion: 2
-        x: 8
-        y: 1288
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 0
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -374,12 +374,12 @@ TextureImporter:
       name: AvatarKim128x128_17
       rect:
         serializedVersion: 2
-        x: 264
-        y: 1288
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 256
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -387,12 +387,12 @@ TextureImporter:
       name: AvatarKim128x128_18
       rect:
         serializedVersion: 2
-        x: 520
-        y: 1288
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 512
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -400,12 +400,12 @@ TextureImporter:
       name: AvatarKim128x128_19
       rect:
         serializedVersion: 2
-        x: 776
-        y: 1288
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 768
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -413,12 +413,12 @@ TextureImporter:
       name: AvatarKim128x128_20
       rect:
         serializedVersion: 2
-        x: 1032
-        y: 1288
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1024
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -426,12 +426,12 @@ TextureImporter:
       name: AvatarKim128x128_21
       rect:
         serializedVersion: 2
-        x: 1288
-        y: 1288
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1280
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -439,12 +439,12 @@ TextureImporter:
       name: AvatarKim128x128_22
       rect:
         serializedVersion: 2
-        x: 1544
-        y: 1288
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1536
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -452,12 +452,12 @@ TextureImporter:
       name: AvatarKim128x128_23
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1288
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1792
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -465,12 +465,12 @@ TextureImporter:
       name: AvatarKim128x128_24
       rect:
         serializedVersion: 2
-        x: 8
-        y: 1032
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 0
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -478,12 +478,12 @@ TextureImporter:
       name: AvatarKim128x128_25
       rect:
         serializedVersion: 2
-        x: 264
-        y: 1032
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 256
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -491,12 +491,12 @@ TextureImporter:
       name: AvatarKim128x128_26
       rect:
         serializedVersion: 2
-        x: 520
-        y: 1032
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 512
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -504,12 +504,12 @@ TextureImporter:
       name: AvatarKim128x128_27
       rect:
         serializedVersion: 2
-        x: 776
-        y: 1032
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 768
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -517,12 +517,12 @@ TextureImporter:
       name: AvatarKim128x128_28
       rect:
         serializedVersion: 2
-        x: 1032
-        y: 1032
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1024
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -530,12 +530,12 @@ TextureImporter:
       name: AvatarKim128x128_29
       rect:
         serializedVersion: 2
-        x: 1288
-        y: 1032
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1280
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -543,12 +543,12 @@ TextureImporter:
       name: AvatarKim128x128_30
       rect:
         serializedVersion: 2
-        x: 1544
-        y: 1032
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1536
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -556,12 +556,12 @@ TextureImporter:
       name: AvatarKim128x128_31
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1032
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1792
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -569,12 +569,12 @@ TextureImporter:
       name: AvatarKim128x128_32
       rect:
         serializedVersion: 2
-        x: 8
-        y: 776
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -582,12 +582,12 @@ TextureImporter:
       name: AvatarKim128x128_33
       rect:
         serializedVersion: 2
-        x: 264
-        y: 776
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -595,12 +595,12 @@ TextureImporter:
       name: AvatarKim128x128_34
       rect:
         serializedVersion: 2
-        x: 520
-        y: 776
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -608,12 +608,12 @@ TextureImporter:
       name: AvatarKim128x128_35
       rect:
         serializedVersion: 2
-        x: 776
-        y: 776
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -621,12 +621,12 @@ TextureImporter:
       name: AvatarKim128x128_36
       rect:
         serializedVersion: 2
-        x: 1032
-        y: 776
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1024
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -634,12 +634,12 @@ TextureImporter:
       name: AvatarKim128x128_37
       rect:
         serializedVersion: 2
-        x: 1288
-        y: 776
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1280
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -647,12 +647,12 @@ TextureImporter:
       name: AvatarKim128x128_38
       rect:
         serializedVersion: 2
-        x: 1544
-        y: 776
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1536
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -660,12 +660,12 @@ TextureImporter:
       name: AvatarKim128x128_39
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 776
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1792
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -673,12 +673,12 @@ TextureImporter:
       name: AvatarKim128x128_40
       rect:
         serializedVersion: 2
-        x: 8
-        y: 520
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -686,12 +686,12 @@ TextureImporter:
       name: AvatarKim128x128_41
       rect:
         serializedVersion: 2
-        x: 264
-        y: 520
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -699,12 +699,12 @@ TextureImporter:
       name: AvatarKim128x128_42
       rect:
         serializedVersion: 2
-        x: 520
-        y: 520
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -712,12 +712,12 @@ TextureImporter:
       name: AvatarKim128x128_43
       rect:
         serializedVersion: 2
-        x: 776
-        y: 520
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -725,12 +725,12 @@ TextureImporter:
       name: AvatarKim128x128_44
       rect:
         serializedVersion: 2
-        x: 1032
-        y: 520
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -738,12 +738,12 @@ TextureImporter:
       name: AvatarKim128x128_45
       rect:
         serializedVersion: 2
-        x: 1288
-        y: 520
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1280
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -751,12 +751,12 @@ TextureImporter:
       name: AvatarKim128x128_46
       rect:
         serializedVersion: 2
-        x: 1544
-        y: 520
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1536
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -764,12 +764,12 @@ TextureImporter:
       name: AvatarKim128x128_47
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 520
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1792
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -777,12 +777,12 @@ TextureImporter:
       name: AvatarKim128x128_48
       rect:
         serializedVersion: 2
-        x: 8
-        y: 264
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -790,12 +790,12 @@ TextureImporter:
       name: AvatarKim128x128_49
       rect:
         serializedVersion: 2
-        x: 264
-        y: 264
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -803,12 +803,12 @@ TextureImporter:
       name: AvatarKim128x128_50
       rect:
         serializedVersion: 2
-        x: 520
-        y: 264
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -816,12 +816,12 @@ TextureImporter:
       name: AvatarKim128x128_51
       rect:
         serializedVersion: 2
-        x: 776
-        y: 264
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -829,12 +829,12 @@ TextureImporter:
       name: AvatarKim128x128_52
       rect:
         serializedVersion: 2
-        x: 1032
-        y: 264
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -842,12 +842,12 @@ TextureImporter:
       name: AvatarKim128x128_53
       rect:
         serializedVersion: 2
-        x: 1288
-        y: 264
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -855,12 +855,12 @@ TextureImporter:
       name: AvatarKim128x128_54
       rect:
         serializedVersion: 2
-        x: 1544
-        y: 264
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -868,12 +868,12 @@ TextureImporter:
       name: AvatarKim128x128_55
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 264
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -881,12 +881,12 @@ TextureImporter:
       name: AvatarKim128x128_56
       rect:
         serializedVersion: 2
-        x: 8
-        y: 8
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -894,12 +894,12 @@ TextureImporter:
       name: AvatarKim128x128_57
       rect:
         serializedVersion: 2
-        x: 264
-        y: 8
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -907,12 +907,12 @@ TextureImporter:
       name: AvatarKim128x128_58
       rect:
         serializedVersion: 2
-        x: 520
-        y: 8
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -920,12 +920,12 @@ TextureImporter:
       name: AvatarKim128x128_59
       rect:
         serializedVersion: 2
-        x: 776
-        y: 8
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -933,12 +933,12 @@ TextureImporter:
       name: AvatarKim128x128_60
       rect:
         serializedVersion: 2
-        x: 1032
-        y: 8
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -946,12 +946,12 @@ TextureImporter:
       name: AvatarKim128x128_61
       rect:
         serializedVersion: 2
-        x: 1288
-        y: 8
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -959,12 +959,12 @@ TextureImporter:
       name: AvatarKim128x128_62
       rect:
         serializedVersion: 2
-        x: 1544
-        y: 8
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -972,12 +972,12 @@ TextureImporter:
       name: AvatarKim128x128_63
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 8
-        width: 240
-        height: 240
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
